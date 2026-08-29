@@ -1,3 +1,10 @@
+## 🗂️ Files
+- **`api.ipynb`** Start here to view API calls and pandas dataframe
+- **`notebooks/alina_eda.ipynb`** Individual notebook for exploratory data analysis
+- requirements.txt
+- .gitignore
+   
+
 # Gaming Industry Trends Dataset
 
 Project Update:
@@ -9,6 +16,7 @@ After receiving approval to pivot, we moved to an alternate dataset:  The Gaming
 
 ## Project Overview
 
+<<<<<<< HEAD
 This project explores trends in the video game industry - including revenue, 
 platform, genre, developer and esports popularity - to understand what factors
 are associated with a game's commercial success. 
@@ -21,6 +29,8 @@ depending on demand
 - Release years range from 2000 - 2024
 
 Dependent Variable:  **Revenue (Millions $)**
+=======
+>>>>>>> cab1554a8955a6846427ada9d0e521729f3b1117
 
 Independent Variables: 
 
