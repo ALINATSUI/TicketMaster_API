@@ -1,53 +1,29 @@
 # Gaming Industry Trends Dataset
 
 Project Update:
-Due to lack of data within the Ticketmaster API, where the team wasn't able to get price related information we received approval to pivot over to an alternate Kaggle dataset on the gaming industry.
 
-Check out the dataset on [Kaggle](https://www.kaggle.com/datasets/haseebindata/gaming-industry-trends-1000-rows).
+We initially set out to pull event and pricing data from the TicketMaster
+API, but the public tier API didn't provide price-related info we needed. 
 
-## Team Members & Roles
+After receiving approval to pivot, we moved to an alternate dataset:  The Gaming Industry Trends Dataset on Kaggle:  [Kaggle](https://www.kaggle.com/datasets/haseebindata/gaming-industry-trends-1000-rows).
 
-1. Alina Tsui - Technical Lead
-2. Oussama Fathi - Team Lead
-3. Ye Morris - Data Analyst
-4. Lofinda Beynis - Data Analyst
-5. Shaina Smith - Data Analyst
-6. Khadija Bangura- Coordinator/Analyst
+## Project Overview
 
-## Availabilities and Schedule
+This project explores trends in the video game industry - including revenue, 
+platform, genre, developer and esports popularity - to understand what factors
+are associated with a game's commercial success. 
 
-- Thursday/Friday Team:
-  - Alina Tsui
-  - Oussama Fathi
-  - Khadija Bangura
 
-- Weekend Team:
-  - Khadija Bangura
-  - Ye morris
-  - Shaina Smith
-  - Lofinda Beynis
+## Dataset
+- 1,000 rows, 11 columns 
+- Only 50 unique game titles - some titles are re-released across multiple years,  
+depending on demand
+- Release years range from 2000 - 2024
 
-- Meetings:
-  - Friday Meeting with Instructor
-  - Friday Meeting with Instructor
+Dependent Variable:  **Revenue (Millions $)**
 
-## Dataset Overview
+Independent Variables: 
 
-### What does this dataset explore?
-
-This dataset looks at different video games and some trends in the gaming industry. It includes information like the game title, genre, platform, release year, developer, revenue, number of players, peak concurrent players, Metacritic score, and whether the game is popular in esports.
-
-### What is the dependent variable?
-
-The dependent variable I would use is - Revenue (Millions $)- because it shows the revenue each game generated.
-
-### Is this variable categorical or quantitative?
-
-This variable is quantitative since it is made up of numeric values. Because of that, it could be used for regression or for looking at patterns in revenue.
-
-### What are the independent variables?
-
-Some of the independent variables are:
 
 - Genre
 - Platform
@@ -71,6 +47,91 @@ The dataset has both types of variables.
 
 There are more than 5 independent variables in this dataset. If revenue is the dependent variable, there are around 9 or 10 other columns that could be used as predictors depending on the analysis.
 
-### How large is the dataset?
+## Analysis Approach
 
-The dataset has over 1,000 rows and 11 columns. It already comes as a CSV file, so it is ready to use for analysis.
+- Univariate analysis
+- Bivariate analysis - mean revenue grouped by genre and by developer
+- Text/keyword analysis (`alina_eda.ipynb`)- word frequency counts across game titles to identify common naming patterns
+- Initial TicketMaster API exploration (`api.ipynb`) - events API calls for NYC 
+music events, used to validate the team's data ingestion setup before the pivot. 
+
+## Results
+
+Revenue by genre 
+- RPG leads at $2,716.13M average revenue
+- Sports trails at $2,284.36m average revenue
+- Genres in between (Fighting, Simulation, Horror, Adventure, Racing, Strategy,
+Shooter, Action) cluster fairly closely in the $2,300 - 2,650M range.  
+
+Revenue by developer (mean, top 10):
+- Capcom leads at $2,697.99M average revenue, followed closely by Sony, Nintendo,
+Activision, and EA
+- Ubisoft is lowest among the top 10 developers at $2,264.02M
+
+Title keyword frequency: "War" (109), "Speed" (107), "Battle" (103), "Fantasy" (100) and "Galaxy" (98) are the most common words across game titles suggesting themes like action/conflict and sci-fi dominate naming conventions of games. 
+
+
+## Individual Contribution 
+
+## Team Members & Roles
+
+1. Alina Tsui - Technical Lead
+2. Oussama Fathi - Team Lead
+3. Ye Morris - Data Analyst
+4. Lofinda Beynis - Data Analyst
+5. Shaina Smith - Data Analyst
+6. Khadija Bangura- Coordinator/Analyst
+
+
+
+
+
+
+
+### Is this variable categorical or quantitative?
+
+This variable is quantitative since it is made up of numeric values. Because of that, it could be used for regression or for looking at patterns in revenue.
+
+
+
+
+## Repository Structure
+```
+├── README.md
+├── api.ipynb (Start here - API calls and pandas dataframe)
+├── data
+│   ├── processed
+│   │   ├── TicketMaster.csv
+│   │   └── gaming_industry_trends.csv
+│   └── raw
+├── notebooks
+│   ├── alina_eda.ipynb (Individual EDA - Alina)
+│   ├── api.ipynb
+│   ├── gaming_industry_trends.csv
+│   ├── khadija_eda.ipynb
+│   ├── lofinda_eda.ipynb
+│   ├── oussama_eda.ipynb
+│   ├── shaina_eda.ipynb
+│   └── ye_eda.ipynb
+├── output.txt
+├── outputs
+│   └── Frequency_selected_keywords.png
+├── requirements.txt
+└── src
+    ├── data_ingestion.py
+    ├── process_data.py
+    └── utils.py
+
+``` 
+
+## Project Evidence 
+
+Title Keyword Frequency
+
+![Title Keyword Frequency](outputs/Frequency_selected_keywords.png)
+
+
+
+## Tech Stack
+
+Python, pandas, requests, python-dotenv (for TicketMaster API key management)
