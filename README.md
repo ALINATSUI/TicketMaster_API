@@ -16,7 +16,6 @@ After receiving approval to pivot, we moved to an alternate dataset:  The Gaming
 
 ## Project Overview
 
-<<<<<<< HEAD
 This project explores trends in the video game industry - including revenue, 
 platform, genre, developer and esports popularity - to understand what factors
 are associated with a game's commercial success. 
@@ -30,7 +29,6 @@ depending on demand
 
 Dependent Variable:  **Revenue (Millions $)**
 =======
->>>>>>> cab1554a8955a6846427ada9d0e521729f3b1117
 
 Independent Variables: 
 
@@ -56,6 +54,10 @@ The dataset has both types of variables.
 ### How many independent variables do you have?
 
 There are more than 5 independent variables in this dataset. If revenue is the dependent variable, there are around 9 or 10 other columns that could be used as predictors depending on the analysis.
+
+### Is this variable categorical or quantitative?
+
+This variable is quantitative since it is made up of numeric values. Because of that, it could be used for regression or for looking at patterns in revenue.
 
 ## Analysis Approach
 
@@ -91,18 +93,6 @@ Title keyword frequency: "War" (109), "Speed" (107), "Battle" (103), "Fantasy" (
 4. Lofinda Beynis - Data Analyst
 5. Shaina Smith - Data Analyst
 6. Khadija Bangura- Coordinator/Analyst
-
-
-
-
-
-
-
-### Is this variable categorical or quantitative?
-
-This variable is quantitative since it is made up of numeric values. Because of that, it could be used for regression or for looking at patterns in revenue.
-
-
 
 
 ## Repository Structure
